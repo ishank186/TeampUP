@@ -80,59 +80,7 @@ backend redirects all http traffic to https. Finally, in order to authorize requ
 frontend and get access to the api, we implemented a CORS filter, in order to allow all traffic from the
 frontend.
 
-### 2.3 Model
-#### 2.3.1 Entities
-The entities that make up the application are the following:
-- **Account**: Every registered user has an account that stores their basic
-information.
-- **Bio**: Abbreviation for *Biography*. An account can either have a bio associated
-with it, or not. If a user has a bio, he/she can edit or delete it at any time. On
-the other hand, if a user does not have a bio, he/she can create a new one.
-- **Like**: A user can add a like to a post. If already liked, he/she can remove the
-like at any time.
-- **Comment**: A user can add one or more comments to a post. Also, the user has
-the freedom to edit or delete his/her comment.
-- **Connection Request**: When a user A visits the profile of another user B that is
-not present in his network of connected users, A can send a connection
-request to B, in order to form a connection. User B can either accept or reject
-incoming connection requests.
-- **Education**: Entity that holds all basic information of education, such as School
-or University that someone studied, GPA, starting and ending date (if the user
-has already graduated) etc.
-- **Experience**: Entity that holds all basic information of working experience,
-such as the Company’s name that someone worked in, workplace,
-employment type, starting and ending date (if exists) etc.
-- **Job**: Represents an article about a job in which users can apply.
-- **Job Application**: Via this entity, a user can apply to a job and if necessary,
-cancel an already existing job application.
-- **Job View**: When users click to a job article, their views are being collected in
-order for the recommendation system to work properly and tailor the job
-articles to each user’s taste. The job creator’s views are not being counted in
-the system.
-- **Message**: A user can chat with his/her available connections at any time.
-- **Post**: A user can publish a post that may contain text, image, video or even a
-sound clip. Also, a user can edit a post’s caption, if needed.
-- **Post View**: When users click to a post, their views are being collected in order
-for the recommendation system to work properly and tailor the posts to each
-user’s taste. The post creator’s views are not being counted in the system.
-- **Tags**: Tags (or Interests) are a few keywords that represent different object
-fields and are associated with accounts and jobs. For example, a user that may
-be interested in Machine Learning and Software Engineering, will pick the
-tags MACHINE LEARNING and SOFTWARE ENGINEERING to be appended to
-his/her profile. Similarly, if a job article is e.g hardware-oriented, the job’s
-creator will append the proper tags to the article. Tags are of major
-importance when it comes to recommending job articles to users (See section
-5.).
 
-#### 2.3.2 Mappers
-There’s a significant difference between the internal entities of the
-application and the external objects that are being published back to the client. There are
-loads of fields that are completely unnecessary for the client to see, for both data integrity
-and security reasons. That’s why mappers have been implemented in this application. For
-example, if a class A has 10 fields but there’s only need for the 3 of them to be published
-back to the client, a mapper converts class A to another defined class B, which contains only
-the essential info. Mappers can be found under the ```/mapper``` folder in backend’s source
-files.
 
 ## 3. Frontend
 ### 3.1. Web Framework
@@ -313,6 +261,7 @@ that post.
 - https://www.bezkoder.com/
 - https://www.bootdey.com/
 - https://getbootstrap.com/
+- 
 - https://amigoscode.com/
 - https://newbedev.com/
 - https://codecraft.tv/
